@@ -7,9 +7,7 @@ docker cheat sheet
 
 **Docker** is an open source project based on Linux containers. It is a tool designed to make it easier to create, deploy, and run applications using containers. **Containers** allows you to package up an application with all of it’s libraries and other dependencies, and ship it all out as one package. Docker containers are very lightweight and fast.
 
-<p align="center">
-    <img width="650" src="https://github.com/mlaskowski17/docker/blob/master/images/docker_path.png">
-</p>
+> image
 
 **A Dockerfile** is where you write the instructions to build a Docker image. These instructions can be installing software packages, setting environment variables, paths, exposing networking ports etc.
 
@@ -25,8 +23,27 @@ Docker Images are stored in the **Docker Registry**. It can be either a user’s
 ## **COMMANDS**
 
 ### **Installation**
-`curl -sSL https://get.docker.com/ | sh`
 
+#### Linux
+Uninstall old versions
+`sudo apt-get remove docker docker-engine docker.io containerd runc`
+
+install docker
+```
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+```
+
+#### Mac
+Use the link to download the dmg
+`https://download.docker.com/mac/stable/Docker.dmg`
+
+#### Windows
+Use the msi instller
+`https://download.docker.com/win/stable/InstallDocker.msi`
+
+#
+## **DOCKERFILE**
 
 
 #

@@ -1,0 +1,3 @@
+<p align="center">
+    <img width="650" src="https://github.com/mlaskowski17/docker/blob/master/images/docker_path.png">
+</p>
