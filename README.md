@@ -114,7 +114,7 @@ sudo sh get-docker.sh
 |  Removing a Docker Image| ```docker rmi nginx```| 
 |  Removing Dangling Images|```docker rmi $(docker images -f dangling=true -q)```| 
 |  Removing all Images| ```docker rmi $(docker images -a -q)```| 
-|  Removingall untagged images| ```docker rmi -f $(docker images | grep "^<none>" | awk "{print $3}")```| 
+|  Removing all untagged images | ``` docker rmi -f $(docker images | grep "^<none>" | awk "{print $3}") ``` | 
 |  Stopping & Removing all Containers| ```docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)```| 
 |  Removing Dangling Volumes| ```docker volume rm $(docker volume ls -f dangling=true -q)```| 
 
@@ -127,8 +127,11 @@ sudo sh get-docker.sh
 
 
 #
-## **MATERIALS**
+## **REFERENCES**
 
 1. [Docker cheatsheet](http://dockercheatsheet.painlessdocker.com)
-2. [Docker - simply explained](https://towardsdatascience.com/ml-models-prototype-to-production-6bfe47973123)
-3. []()
+2. [Docker CLI cheatsheer](https://devhints.io/docker)
+3. [Docker-compose cheatsheet](https://devhints.io/docker-compose)
+4. [DockerFile cheatsheet](https://devhints.io/dockerfile)
+5. [docker CLI & Dockerfile Cheat Sheet](https://design.jboss.org/redhatdeveloper/marketing/docker_cheatsheet/cheatsheet/images/docker_cheatsheet_r3v2.pdf)
+
