@@ -25,22 +25,27 @@ Docker Images are stored in the **Docker Registry**. It can be either a user’s
 ### **Installation**
 
 #### Linux
-Uninstall old versions
-`sudo apt-get remove docker docker-engine docker.io containerd runc`
+```bash
+# Uninstall old versions
+sudo apt-get remove docker docker-engine docker.io containerd runc
 
-install docker
-```
+# install docker
 curl -fsSL https://get.docker.com -o get-docker.sh
 sudo sh get-docker.sh
 ```
 
 #### Mac
 Use the link to download the dmg
-`https://download.docker.com/mac/stable/Docker.dmg`
+```bash
+# Use the link to download the dmg
+https://download.docker.com/mac/stable/Docker.dmg
+```
 
 #### Windows
-Use the msi instller
-`https://download.docker.com/win/stable/InstallDocker.msi`
+```bash
+# Use the msi instller
+https://download.docker.com/win/stable/InstallDocker.msi
+```
 
 #
 ## **DOCKERFILE**
