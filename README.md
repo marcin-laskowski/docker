@@ -8,7 +8,7 @@ docker cheat sheet
 **Docker** is an open source project based on Linux containers. It is a tool designed to make it easier to create, deploy, and run applications using containers. **Containers** allows you to package up an application with all of it’s libraries and other dependencies, and ship it all out as one package. Docker containers are very lightweight and fast.
 
 <p align="center">
-    <img width="650" src="https://github.com/mlaskowski17/docker/blob/master/images/docker_build_process.png">
+    <img width="650" src="https://github.com/mlaskowski17/docker/blob/master/images/docker_path.png">
 </p>
 
 **A Dockerfile** is where you write the instructions to build a Docker image. These instructions can be installing software packages, setting environment variables, paths, exposing networking ports etc.
