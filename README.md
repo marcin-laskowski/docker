@@ -39,15 +39,19 @@ sudo sh get-docker.sh
 Login to a Registry
 ```docker login```
 ```docker login localhost:8000```
+
 Logout from a registry 
 ```docker logout```
 ```docker logout localhost:8000```
+
 Searching an Image 
 ```docker search nginx```
 ```docker search nginx --stars=3 --no-trunc busybox```
+
 Pulling an Image 
 ```docker pull nginx```
 ```docker pull eon01/nginx localhost:5000/myadmin/nginx```
+
 Pushing an Image 
 ```docker push eon01/nginx```
 ```docker push eon01/nginx localhost:5000/myadmin/nginx```
