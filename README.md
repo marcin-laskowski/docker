@@ -36,132 +36,87 @@ sudo sh get-docker.sh
 
 ### **Docker Registries & Repositories**
 
-Login to a Registry
-```docker login```
-```docker login localhost:8000```
-
-Logout from a registry 
-```docker logout```
-```docker logout localhost:8000```
-
-Searching an Image 
-```docker search nginx```
-```docker search nginx --stars=3 --no-trunc busybox```
-
-Pulling an Image 
-```docker pull nginx```
-```docker pull eon01/nginx localhost:5000/myadmin/nginx```
-
-Pushing an Image 
-```docker push eon01/nginx```
-```docker push eon01/nginx localhost:5000/myadmin/nginx```
+| Description | Command |
+| --- | --- |
+| Login to a Registry | ```docker login localhost:8000``` |
+| Logout from a registry | ```docker logout localhost:8000``` |
+| Searching an Image | ```docker search nginx``` |
+|Pulling an Image | ```docker pull nginx``` |
+|Pulling an Image from localhost | ```docker pull eon01/nginx localhost:5000/myadmin/nginx``` |
+|Pushing an Image | ```docker push eon01/nginx``` |
+|Pushing an Image from localhost| ```docker push eon01/nginx localhost:5000/myadmin/nginx``` |
 
 
 ### **Running Containerss**
 
-#### Creating a Container
-```docker create -t -i eon01/infinite --name infinite```
-#### Running a Container
-```docker run -it --name infinite -d eon01/infinite```
-#### Renaming a Container
-```docker rename infinite infinity```
-#### Removing a Container
-```docker rm infinite```
-#### Updating a Container
-```docker update --cpu-shares 512 -m 300M infinite```
+| Description | Command |
+| --- | --- |
+| Creating a Container | ```docker create -t -i eon01/infinite --name infinite```| 
+|  Running a Container| ```docker run -it --name infinite -d eon01/infinite```| 
+|  Renaming a Container| ```docker rename infinite infinity```| 
+|  Removing a Container | ```docker rm infinite```| 
+|  Updating a Container| ```docker update --cpu-shares 512 -m 300M infinite```| 
 
 
 ### **Starting and Stoping Containers**
 
-#### Starting
-```docker start nginx```
-#### Stopping
-```docker stop nginx```
-#### Restarting
-```docker restart nginx```
-#### Pushing
-```docker pause nginx```
-#### Unpaussing
-```docker unpause nginx```
-#### Blocking a Container
-```docker wait nginx```
-#### Sending a SIGKILL
-```docker kill nginx```
-#### Connecting to an Existing Container
-```docker attach nginx```
+| Description | Command |
+| --- | --- |
+|Starting | ```docker start nginx```|
+| Stopping| ```docker stop nginx```|
+|Restarting| ```docker restart nginx```|
+| Pushing| ```docker pause nginx```|
+|Unpaussing| ```docker unpause nginx```|
+| Blocking a Container| ```docker wait nginx```|
+| Sending a SIGKILL| ```docker kill nginx```|
+| Connecting to an Existing Container | ```docker attach nginx```|
 
 ### **Getting Information about Containers**
 
-#### Running Containers
-```docker ps```
-```docker ps -a```
-#### Containers Logs
-```docker logs infinite```
-#### Inspecting Containers
-```docker inspect infinite```
-```docker inspect --format '{{ .NetworkSettings.IPAddress }}' $(docker ps -q)```
-#### Containers Events
-```docker events infinite```
-#### Public Ports
-```docker port infinite```
-#### Running processes
-```docker top infinite```
-#### Container Resource Usage
-```docker stats infinite```
-#### Inspecting changes to files or directories on a container’s filesystem
-```docker diff infinite```
+| Description | Command |
+| --- | --- |
+| Running Containers| ```docker ps -a```|
+| Containers Logs| ```docker logs infinite```|
+| Inspecting Containers| ```docker inspect infinite```|
+| Containers Events| ```docker events infinite```|
+| Public Ports| ```docker port infinite```|
+| Running processes| ```docker top infinite```|
+| Container Resource Usage| ```docker stats infinite```|
+| Inspecting changes to files or directories on a container’s filesystem| ```docker diff infinite```|
 
 
 ### **Manipulating Images**
 
-#### Listing Images
-```docker images```
-#### Building Images
-```docker build .```
-```docker build github.com/creack/docker-firefox```
-```docker build - < Dockerfile```
-```docker build - < context.tar.gz```
-```docker build -t eon/infinite .```
-```docker build -f myOtherDockerfile .```
-```curl example.com/remote/Dockerfile | docker build -f - .```
-#### Removing and Image
-```docker rmi nginx```
-#### Loading a Tarred Repository from a File or the Standard Input Stream
-```docker load < ubuntu.tar.gz```
-```docker load --input ubuntu.tar```
-#### Save an image to a Tar Archieve
-```docker save busybox > ubuntu.tar```
-#### Showing the History of an Image
-```docker history```
-#### Creating an Image From a Container
-``` docker commit nginx```
-#### Tagging an Image
-```docker tag nginx eon01/nginx```
-#### Pushing an Image
-```docker push eon01/nginx```
+| Description | Command |
+| --- | --- |
+| Listing Images | ```docker images```|
+| Building Image | ```docker build .``` |
+|Building from github |```docker build github.com/creack/docker-firefox```|
+| Building from DockerFile | ```docker build - < Dockerfile```|
+|Building from .tar.gz |```docker build - < context.tar.gz```|
+| Removing and Image| ```docker rmi nginx```|
+| Loading a Tarred Repository from a File| ```docker load < ubuntu.tar.gz``` |
+| Loading a Tarred Repository from the Standard Input Stream| ```docker load --input ubuntu.tar``` | 
+|  Save an image to a Tar Archieve|  ```docker save busybox > ubuntu.tar```| 
+|  Showing the History of an Image|  ```docker history```| 
+|  Creating an Image From a Container |  ``` docker commit nginx```| 
+|  Tagging an Image| ```docker tag nginx eon01/nginx```| 
+|  Pushing an Image| ```docker push eon01/nginx```| 
 
 ### **Cleaning Docker**
 
-#### Removing a Running Container
-```docker rm nginx```
-#### Removing a Container and its Volume
-```docker rm -v nginx```
-#### Removing all Exited Containers
-```docker rm $(docker ps -a -f status=exited -q)```
-#### Removing All Stopped Containers
-``` docker rm `docker ps -a -q` ```
-#### Removing a Docker Image
-```docker rmi nginx```
-#### Removing Dangling Images
-```docker rmi $(docker images -f dangling=true -q)```
-#### Removing all Images
-```docker rmi $(docker images -a -q)```
-#### Removingall untagged images
-```docker rmi -f $(docker images | grep "^<none>" | awk "{print $3}")```
-#### Stopping & Removing all Containers
-```docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)```
-#### Removing Dangling Volumes
-```docker volume rm $(docker volume ls -f dangling=true -q)```
+| Description | Command |
+| --- | --- |
+|  Removing a Running Container|  ```docker rm nginx```| 
+|  Removing a Container and its Volume| ```docker rm -v nginx```| 
+|  Removing all Exited Containers| ```docker rm $(docker ps -a -f status=exited -q)```|
+|  Removing All Stopped Containers| ``` docker rm `docker ps -a -q` ```| 
+|  Removing a Docker Image| ```docker rmi nginx```| 
+|  Removing Dangling Images|```docker rmi $(docker images -f dangling=true -q)```| 
+|  Removing all Images| ```docker rmi $(docker images -a -q)```| 
+|  Removingall untagged images| ```docker rmi -f $(docker images | grep "^<none>" | awk "{print $3}")```| 
+|  Stopping & Removing all Containers| ```docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)```| 
+|  Removing Dangling Volumes| ```docker volume rm $(docker volume ls -f dangling=true -q)```| 
 
 
 
