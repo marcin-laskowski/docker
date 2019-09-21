@@ -113,8 +113,7 @@ sudo sh get-docker.sh
 |  Removing All Stopped Containers| ``` docker rm `docker ps -a -q` ```| 
 |  Removing a Docker Image| ```docker rmi nginx```| 
 |  Removing Dangling Images|```docker rmi $(docker images -f dangling=true -q)```| 
-|  Removing all Images| ```docker rmi $(docker images -a -q)```| 
-|  Removing all untagged images | ``` docker rmi -f $(docker images | grep "^<none>" | awk "{print $3}") ``` | 
+|  Removing all Images| ```docker rmi $(docker images -a -q)```|  
 |  Stopping & Removing all Containers| ```docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)```| 
 |  Removing Dangling Volumes| ```docker volume rm $(docker volume ls -f dangling=true -q)```| 
 
